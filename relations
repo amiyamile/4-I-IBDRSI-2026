@@ -1,0 +1,17 @@
+students se conecta con:
+
+groups (id_group)
+
+grades (id_grade)
+
+years (id_year)
+
+shifts (id_shift)
+
+subjects debería conectarse con:
+
+grades (para saber en qué grado se imparte)
+
+students solo si quieres registrar qué alumno cursa qué materia (aunque lo más limpio es una tabla intermedia tipo inscripciones).
+
+logs se conecta con students para auditar acciones.
