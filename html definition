@@ -1,0 +1,17 @@
+login.html → Página de inicio de sesión.
+Formulario con usuario/correo y contraseña. Botones: Entrar, Olvidé contraseña, Registrar.
+
+register.html → Página de registro de nuevos usuarios.
+Formulario con nombre, correo, contraseña y botón Enviar.
+
+forgot.html → Página para recuperar contraseña.
+Formulario con correo electrónico y botón Enviar.
+
+options.html → Página para administrar opciones del sistema.
+Formulario con campos: periodo, grado, grupo, materia, turno.
+➝ Aquí necesitas que la DB tenga tablas para cada entidad (ejemplo: periodos, grados, grupos, materias, turnos).
+➝ Lo que se ingrese en el formulario se guarda en esas tablas y se muestra en una tabla HTML con los registros existentes.
+
+students.html → Vista de alumnos.
+➝ Aquí se listan los alumnos registrados, junto con sus planeaciones (relación alumno → planeación).
+➝ Puede tener botones para Agregar alumno, Editar, Eliminar, y un enlace a ver sus planeaciones.
