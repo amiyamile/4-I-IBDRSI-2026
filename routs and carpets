@@ -1,0 +1,13 @@
+Rutas y carpetas
+Login, Register, Forgot → dentro de app/routes/usuarios.py.
+➝ Aquí defines las rutas /login, /register, /forgot.
+➝ Usan POST para recibir datos de formularios (request.form).
+
+Options → dentro de app/routes/options.py.
+➝ Rutas /options para crear y listar periodo, grado, grupo, materia, turno.
+
+Students → dentro de app/routes/students.py.
+➝ Rutas /students para CRUD de alumnos y mostrar planeaciones.
+
+Planeaciones → dentro de app/routes/planeacion.py.
+➝ Rutas /planeacion para asignar planeaciones a cada alumno.
