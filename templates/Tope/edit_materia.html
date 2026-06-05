@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Materias</title>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial, sans-serif;
+        }
+
+        body{
+            background-color:#2fb16e;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            min-height:100vh;
+            padding:20px;
+        }
+
+        .contenedor{
+            max-width:600px;
+            width:100%;
+            background:white;
+            padding:40px;
+            border-radius:12px;
+            box-shadow:0 4px 15px rgba(0,0,0,0.15);
+        }
+
+        h2{
+            text-align:center;
+            margin-bottom:25px;
+            color:#212529;
+        }
+
+        h3{
+            margin-top:30px;
+            margin-bottom:15px;
+            color:#212529;
+        }
+
+        .form-group{
+            margin-bottom:20px;
+        }
+
+        label{
+            display:block;
+            margin-bottom:8px;
+            font-weight:bold;
+        }
+
+        input{
+            width:100%;
+            padding:12px;
+            border:1px solid #ddd;
+            border-radius:6px;
+            font-size:14px;
+        }
+
+        input:focus{
+            border-color:#2fb16e;
+            outline:none;
+        }
+
+        .btn{
+            width:100%;
+            padding:15px;
+            background:#2fb16e;
+            color:white;
+            border:none;
+            border-radius:8px;
+            font-size:16px;
+            font-weight:bold;
+            cursor:pointer;
+        }
+
+        .btn:hover{
+            background:#27985d;
+        }
+
+        ul{
+            list-style:none;
+        }
+
+        li{
+            background:#f5f5f5;
+            margin-bottom:10px;
+            padding:12px;
+            border-radius:6px;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+        }
+
+        .eliminar{
+            background:#dc3545;
+            color:white;
+            border:none;
+            padding:6px 10px;
+            border-radius:5px;
+            cursor:pointer;
+        }
+
+        .eliminar:hover{
+            background:#bb2d3b;
+        }
+
+        .btn-back{
+            display:block;
+            text-align:center;
+            margin-top:20px;
+            text-decoration:none;
+            color:#2fb16e;
+            font-weight:bold;
+        }
+    </style>
+</head>
+<body>
+
+<div class="contenedor">
+
+    <h2>Gestión de Materias</h2>
+
+    <form id="materiaForm">
+
+        <div class="form-group">
+            <label for="nombre">Nombre de la Materia</label>
+            <input type="text" id="nombre" required>
+        </div>
+
+        <div class="form-group">
+            <label for="codigo">Código / Clave</label>
+            <input type="text" id="codigo" required>
+        </div>
+
+        <div class="form-group">
+            <label for="creditos">Créditos</label>
+            <input type="number" id="creditos" min="1" required>
+        </div>
+
+        <button type="submit" class="btn">
+            Guardar Materia
+        </button>
+
+    </form>
+
+    <h3>Materias Registradas</h3>
+
+    <ul id="listaMaterias"></ul>
+
+    <a href="../../index.html" class="btn-back">
+        Docentes / Volver
+    </a>
+
+</div>
+
+<script>
+
+function mostrarMaterias(){
+
+    const lista = document.getElementById("listaMaterias");
+    lista.innerHTML = "";
+
+    let materias =
+        JSON.parse(localStorage.getItem("materias")) || [];
+
+    materias.forEach((materia,index)=>{
+
+        const item = document.createElement("li");
+
+        item.innerHTML = `
+            <span>
+                <strong>${materia.nombre}</strong>
+                | ${materia.codigo}
+                | ${materia.creditos} créditos
+            </span>
+
+            <button
+                class="eliminar"
+                onclick="eliminarMateria(${index})">
+                Eliminar
+            </button>
+        `;
+
+        lista.appendChild(item);
+    });
+}
+
+document
+.getElementById("materiaForm")
+.addEventListener("submit", function(e){
+
+    e.preventDefault();
+
+    const materia = {
+        nombre: document.getElementById("nombre").value,
+        codigo: document.getElementById("codigo").value,
+        creditos: document.getElementById("creditos").value
+    };
+
+    let materias =
+        JSON.parse(localStorage.getItem("materias")) || [];
+
+    materias.push(materia);
+
+    localStorage.setItem(
+        "materias",
+        JSON.stringify(materias)
+    );
+
+    this.reset();
+
+    mostrarMaterias();
+
+    alert("Materia guardada correctamente");
+});
+
+function eliminarMateria(index){
+
+    let materias =
+        JSON.parse(localStorage.getItem("materias")) || [];
+
+    materias.splice(index,1);
+
+    localStorage.setItem(
+        "materias",
+        JSON.stringify(materias)
+    );
+
+    mostrarMaterias();
+}
+
+mostrarMaterias();
+
+</script>
+
+</body>
+</html>

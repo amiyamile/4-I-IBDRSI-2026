@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registros</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            background: #1aa05b;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .login-container {
+            width: 100%;
+            max-width: 400px;
+            background: #ffffff;
+            padding: 32px;
+            border-radius: 8px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+        }
+
+        .login-container h1 {
+            text-align: center;
+            margin-bottom: 24px;
+            color: #222;
+            font-size: 28px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        label {
+            font-weight: bold;
+            color: #333;
+            font-size: 14px;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #d0dddc;
+            border-radius: 6px;
+            font-size: 15px;
+            outline: none;
+        }
+
+        input:focus {
+            border-color: #2563eb;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+        }
+
+        button {
+            margin-top: 10px;
+            padding: 12px;
+            border: none;
+            border-radius: 6px;
+            background: #1aa05b;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #000000;
+        }
+
+        .links {
+            margin-top: 20px;
+            text-align: center;
+        }        
+        .links a {
+            display: block;
+            margin: 8px 0;
+            text-decoration: none;
+            color: #1aa05b;
+            font-size: 18px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <main class="login-container">
+        <h1>Registro</h1>
+
+        <form action="{{ url_for('usuarios.register') }}" method="POST">
+
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Nombre completo" required>
+
+            <label for="correo">Correo</label>
+            <input type="email" id="correo" name="correo" placeholder="Correo electrónico" required>
+
+            <label for="password">Contraseña</label>
+            <input type="password" id="password" name="password" placeholder="Contraseña" required>
+
+            <button type="submit">Enviar</button>
+             
+            <div class="links">
+    <a href="{{ url_for('usuarios.forgot') }}">Docentes</a>
+</div>
+        </form>
+    </main>
+
+</body>
+</html>

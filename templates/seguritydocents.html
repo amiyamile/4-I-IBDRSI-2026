@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acceso Docentes</title>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial, sans-serif;
+        }
+
+        body{
+            background-color:#f2f2f2;
+            overflow:hidden;
+
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            height:100vh;
+        }
+
+        body::before{
+            content:"";
+            position:fixed;
+            top:0;
+            left:0;
+            width:200%;
+            height:200%;
+
+            background-image:url("https://i.pinimg.com/1200x/f9/60/52/f96052f813e1810e8cdf92a70413b561.jpg");
+            background-repeat:repeat;
+            background-size:80px;
+
+            opacity:0.12;
+            z-index:-1;
+
+            animation:fondoLoop 35s linear infinite;
+        }
+
+        @keyframes fondoLoop{
+            0%{
+                transform:translate(0,0);
+            }
+            100%{
+                transform:translate(-200px,-200px);
+            }
+        }
+
+        .container{
+            background:white;
+            padding:30px;
+            border-radius:10px;
+            box-shadow:0 0 10px rgba(0,0,0,0.15);
+            text-align:center;
+        }
+
+        h2{
+            margin-bottom:15px;
+        }
+
+        input{
+            width:250px;
+            padding:10px;
+            margin-bottom:10px;
+            border:1px solid #ccc;
+            border-radius:5px;
+        }
+
+        button{
+            padding:10px 20px;
+            background:#1aa05b;
+            color:white;
+            border:none;
+            border-radius:5px;
+            cursor:pointer;
+        }
+
+        button:hover{
+            background:#14804a;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>Acceso para Docentes</h2>
+
+        <input type="password" id="clave" placeholder="Ingrese la clave">
+        <br>
+
+        <button onclick="verificar()">Entrar</button>
+    </div>
+
+    <script>
+        function verificar() {
+            let clave = document.getElementById("clave").value;
+
+            if (clave === "Yo") {
+                window.location.href = "indexdocentes.html";
+            } else {
+                alert("Clave incorrecta");
+            }
+        }
+    </script>
+
+</body>
+</html>

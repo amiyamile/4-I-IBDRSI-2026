@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listado de Alumnos</title>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body{
+            background-color: #2fb16e; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .contenedor{
+            max-width: 500px;
+            width: 100%;
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+        }
+
+        h2{
+            text-align:center;
+            margin-bottom: 30px;
+            color: #212529;
+            font-weight: bold;
+            font-size: 24px;
+        }
+
+        table{
+            width:100%;
+            border-collapse:collapse;
+            margin-bottom: 30px;
+            border: 1px solid #ddd;
+        }
+
+        th, td{
+            border: none;
+            border-bottom: 1px solid #f1f1f1;
+            padding: 12px 10px;
+            text-align:left;
+            font-size: 14px;
+        }
+
+        th{
+            background: #fafafa;
+            color: #555;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 12px;
+        }
+
+        .grupo{
+            background: #4ab882;
+            color: white;
+            text-align: center;
+            font-weight: bold;
+            font-size: 16px;
+            padding: 15px;
+            border: none;
+        }
+
+        .grupo:after {
+            content: none;
+        }
+
+        /* BOTÓN VOLVER */
+        .btn{
+            display: block;
+            width: 100%;
+            padding: 14px;
+            margin-top: 15px;
+
+            background: linear-gradient(135deg, #2fb16e, #27a262);
+            color: white;
+
+            text-decoration: none;
+            text-align: center;
+
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 16px;
+
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            transition: all 0.2s ease;
+        }
+
+        .btn:hover{
+            transform: translateY(-2px);
+            box-shadow: 0 6px 14px rgba(0,0,0,0.2);
+        }
+
+        .btn:active{
+            transform: translateY(0px);
+            box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+        }
+
+    </style>
+</head>
+
+<body>
+
+<div class="contenedor">
+
+    <h2>Listado de Alumnos</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Matrícula</th>
+                <th>Nombre</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            <tr>
+                <td colspan="3" class="grupo">4-I</td>
+            </tr>
+
+            <tr>
+                <td>1</td>
+                <td>24314052460170.00</td>
+                <td>ANGELES HERNANDEZ ALAN DWII</td>
+            </tr>
+
+            <tr>
+                <td>2</td>
+                <td>24314052460015.00</td>
+                <td>BAÑUELOS GARCIA KAREN YESENIA</td>
+            </tr>
+
+            <tr>
+                <td>3</td>
+                <td>24314052460002.00</td>
+                <td>BAYARDO FREGOSO CARLOS EDUARDO</td>
+            </tr>
+
+            <tr>
+                <td>4</td>
+                <td>24314052460172.00</td>
+                <td>GALLARDO LEDESMA CARLOS</td>
+            </tr>
+
+            <tr>
+                <td>5</td>
+                <td>24314052460467.00</td>
+                <td>GARCIA GUZMAN ANDREA GUADALUPE</td>
+            </tr>
+
+            <tr>
+                <td>6</td>
+                <td>24314052460268.00</td>
+                <td>GARCIA HERRERA DAVID IYARI</td>
+            </tr>
+
+            <tr>
+                <td>7</td>
+                <td>24314052460117.00</td>
+                <td>GOMEZ FERNANDEZ JOSE ROBERTO</td>
+            </tr>
+
+            <tr>
+                <td>8</td>
+                <td>24314052460469.00</td>
+                <td>GONZALEZ JACINTO MICHELLE ESTEFANIA</td>
+            </tr>
+
+            <tr>
+                <td>9</td>
+                <td>24314052460173.00</td>
+                <td>GONZALEZ ORTEGA CAMILA</td>
+            </tr>
+
+            <tr>
+                <td>10</td>
+                <td>24314052460456.00</td>
+                <td>GUTIERREZ GOMEZ GERARDO JESUS</td>
+            </tr>
+
+        </tbody>
+    </table>
+
+    <a href="file:///c%3A/Users/David/OneDrive/Documents/GitHub/4-i-idbrsi-proyecto/templates/index.html" class="btn">
+        ← Volver Atrás
+    </a>
+
+</div>
+
+</body>
+</html>

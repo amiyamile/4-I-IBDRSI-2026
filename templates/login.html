@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio de Sesión</title>
+
+    <style>
+        body{
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            background: #1aa05b;
+            display: flex;
+            border: 20px 0;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .login-container{
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            width: 300px;
+            box-shadow: 0 20px rgba(250, 32, 7, 0.2);
+        }
+
+        input{
+            width: 95%;
+            padding: 6px;
+            margin: 8px 0;
+        }
+
+        button{
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border: 10px;
+            background: #1aa05b;
+            color: rgb(255, 255, 255);
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover{
+            background: #020202;
+        }
+
+        .links{
+            margin-top: 15px;
+            text-align: center;
+        }
+
+        .links a{
+            display: block;
+            margin: 5px 0;
+            text-decoration: none;
+            color: #000000;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="login-container">
+        <h2>Iniciar Sesión</h2>
+
+        <form action="{{ url_for('usuarios.login') }}" method="POST">
+<<<<<<< Updated upstream
+=======
+            
+>>>>>>> Stashed changes
+            <input type="text" name="usuario" placeholder="Usuario o correo" required>
+            <input type="password" name="password" placeholder="Contraseña" required>
+
+            <label>Grado:</label>
+            <select name="grado" required>
+                <option value="2do">2do</option>
+                <option value="4to">4to</option>
+                <option value="6to">6to</option>
+            </select>
+
+            <label>Grupo:</label>
+            <select name="grupo" required>
+                <option value="I">I</option>
+                <option value="J">J</option>
+            </select>
+
+            <label>Generación:</label>
+            <select name="generacion" required>
+                <option value="2023-2026">2023-2026</option>
+                <option value="2024-2027">2024-2027</option>
+                <option value="2025-2028">2025-2028</option>
+            </select>
+
+            <button type="submit">Entrar</button>
+        </form>
+
+        <div class="links">
+            
+            <a href="{{ url_for('usuarios.forgot') }}">Olvidé mi contraseña</a>
+
+            <a href="{{ url_for('usuarios.register') }}">Registrar</a>
+
+        </div>
+    </div>
+
+</body>
+</html>

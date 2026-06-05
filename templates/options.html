@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Opciones</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            background: #1aa05b;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .campo {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        input {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+
+        .boton {
+            grid-column: span 2;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 6px;
+            background: #1aa05b;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #000000;
+        }
+
+        table {
+            width: 100%;
+            margin-top: 30px;
+            border-collapse: collapse;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background: #1aa05b;
+            color: white;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: center;
+        }
+
+        tr:nth-child(even) {
+            background: #f4f4f4;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <h1>Administración de Opciones</h1>
+
+        <form action="{{ url_for('usuarios.options') }}" method="POST">
+
+            <div class="campo">
+                <label for="periodo">Periodo</label>
+                <input type="text" id="periodo" name="periodo" required>
+            </div>
+
+            <div class="campo">
+                <label for="grado">Grado</label>
+                <input type="text" id="grado" name="grado" required>
+            </div>
+
+            <div class="campo">
+                <label for="grupo">Grupo</label>
+                <input type="text" id="grupo" name="grupo" required>
+            </div>
+
+            <div class="campo">
+                <label for="materia">Materia</label>
+                <input type="text" id="materia" name="materia" required>
+            </div>
+
+            <div class="campo">
+                <label for="turno">Turno</label>
+                <input type="text" id="turno" name="turno" required>
+            </div>
+
+            <div class="boton">
+                <button type="submit">Guardar</button>
+            </div>
+
+        </form>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Periodo</th>
+                    <th>Grado</th>
+                    <th>Grupo</th>
+                    <th>Materia</th>
+                    <th>Turno</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                {% for opcion in opciones %}
+                <tr>
+                    <td>{{ opcion.id }}</td>
+                    <td>{{ opcion.periodo }}</td>
+                    <td>{{ opcion.grado }}</td>
+                    <td>{{ opcion.grupo }}</td>
+                    <td>{{ opcion.materia }}</td>
+                    <td>{{ opcion.turno }}</td>
+                </tr>
+                {% endfor %}
+
+            </tbody>
+        </table>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Docentes</title>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial, sans-serif;
+        }
+
+        body{
+            background-color:#f2f2f2;
+            overflow:hidden;
+        }
+
+        body::before{
+            content:"";
+            position:fixed;
+            top:0;
+            left:0;
+            width:200%;
+            height:200%;
+
+            background-image:url("https://i.pinimg.com/1200x/f9/60/52/f96052f813e1810e8cdf92a70413b561.jpg");
+            background-repeat:repeat;
+            background-size:80px;
+
+            opacity:0.12;
+            z-index:-1;
+
+            animation:fondoLoop 35s linear infinite;
+        }
+
+        @keyframes fondoLoop{
+            0%{
+                transform:translate(0,0);
+            }
+            100%{
+                transform:translate(-200px,-200px);
+            }
+        }
+
+        header{
+            background:#1aa05b;
+            color:white;
+            padding:20px;
+            text-align:center;
+        }
+
+        nav{
+            background:#1aa05b;
+            padding:15px;
+            text-align:center;
+        }
+
+        nav a{
+            color:white;
+            text-decoration:none;
+            margin:0 15px;
+            font-weight:bold;
+        }
+
+        nav a:hover{
+            text-decoration:underline;
+        }
+
+        .container{
+            max-width:1200px;
+            margin:30px auto;
+            background:white;
+            padding:25px;
+            border-radius:10px;
+            box-shadow:0 0 10px rgba(0,0,0,0.15);
+            margin-bottom:80px;
+        }
+
+        .container h2{
+            margin-bottom:10px;
+        }
+
+        .container p{
+            font-size:18px;
+            line-height:1.6;
+        }
+
+        footer{
+            position:fixed;
+            bottom:0;
+            left:0;
+            width:100%;
+            text-align:center;
+            padding:20px;
+            background:#1aa05b;
+            color:white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Sistema de Docentes</h1>
+    </header>
+
+    <nav>
+        <a href="file:///c%3A/Users/David/OneDrive/Documents/GitHub/4-i-idbrsi-proyecto/templates/Tope/Estudiantes.html">Estudiantes</a>
+        <a href="/materias">Materias Asignadas</a>
+        <a href="/grupos">Grupos</a>
+        <a href="/opciones">Opciones</a>
+    </nav>
+
+    <div class="container">
+        <h2>Bienvenido al Sistema de Docentes</h2>
+
+        <p>
+            Administra docentes, materias y grupos desde esta plataforma.
+        </p>
+
+        <br>
+
+        <p>
+            Utiliza el menú superior para acceder a los diferentes módulos del sistema y gestionar la información académica de manera eficiente.
+        </p>
+    </div>
+
+    <footer>
+        Sistema de Docentes © 2026
+    </footer>
+
+</body>
+</html>
